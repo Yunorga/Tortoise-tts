@@ -133,3 +133,10 @@ dmypy.json
 .custom/*
 results/*
 debug_states/*
+
+trans.py
+translate-fr_en-1_0.argosmodel
+tortoise/voices/*
+tortoise/models/*
+
+api_new.py

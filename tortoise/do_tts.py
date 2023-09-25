@@ -25,10 +25,15 @@ if __name__ == '__main__':
     parser.add_argument('--cvvp_amount', type=float, help='How much the CVVP model should influence the output.'
                                                           'Increasing this can in some cases reduce the likelihood of multiple speakers. Defaults to 0 (disabled)', default=.0)
     args = parser.parse_args()
+
+    print("Etape 1 : ")
     if torch.backends.mps.is_available():
         args.use_deepspeed = False
     os.makedirs(args.output_path, exist_ok=True)
     tts = TextToSpeech(models_dir=args.model_dir, use_deepspeed=args.use_deepspeed, kv_cache=args.kv_cache, half=args.half)
+    print(tts)
+
+    print("Fin étape 1")
 
     selected_voices = args.voice.split(',')
     for k, selected_voice in enumerate(selected_voices):
@@ -37,9 +42,10 @@ if __name__ == '__main__':
         else:
             voice_sel = [selected_voice]
         voice_samples, conditioning_latents = load_voices(voice_sel)
-
+        print("Start")
         gen, dbg_state = tts.tts_with_preset(args.text, k=args.candidates, voice_samples=voice_samples, conditioning_latents=conditioning_latents,
                                   preset=args.preset, use_deterministic_seed=args.seed, return_deterministic_state=True, cvvp_amount=args.cvvp_amount)
+        print("End")
         if isinstance(gen, list):
             for j, g in enumerate(gen):
                 torchaudio.save(os.path.join(args.output_path, f'{selected_voice}_{k}_{j}.wav'), g.squeeze(0).cpu(), 24000)
