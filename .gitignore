@@ -138,5 +138,6 @@ trans.py
 translate-fr_en-1_0.argosmodel
 tortoise/voices/*
 tortoise/models/*
-
+tortoise/static/audio/*
 api_new.py
+test.py
