@@ -1,0 +1,96 @@
+.icon-account_circle_black::before {
+    content: url("/static/icons/account_circle_black.svg");
+}
+
+.icon-arrow_right_alt_black::before {
+    content: url("/static/icons/arrow_right_alt_black.svg");
+}
+
+.icon-article_black::before {
+    content: url("/static/icons/article_black.svg");
+}
+
+.icon-delete_black::before {
+    content: url("/static/icons/delete_black.svg");
+}
+
+.icon-delete_forever_black::before {
+    content: url("/static/icons/delete_forever_black.svg");
+}
+
+.icon-description_black::before {
+    content: url("/static/icons/description_black.svg");
+}
+
+.icon-done_black::before {
+    content: url("/static/icons/done_black.svg");
+}
+
+.icon-help_outline_black::before {
+    content: url("/static/icons/help_outline_black.svg");
+}
+
+.icon-highlight_off_black::before {
+    content: url("/static/icons/highlight_off_black.svg");
+}
+
+.icon-history_black::before {
+    content: url("/static/icons/history_black.svg");
+}
+
+.icon-home_black::before {
+    content: url("/static/icons/home_black.svg");
+}
+
+.icon-info_black::before {
+    content: url("/static/icons/info_black.svg");
+}
+
+.icon-lightbulb_black::before {
+    content: url("/static/icons/lightbulb_black.svg");
+}
+
+.icon-qr_code_2_black::before {
+    content: url("/static/icons/qr_code_2_black.svg");
+}
+
+.icon-receipt_black::before {
+    content: url("/static/icons/receipt_black.svg");
+}
+
+.icon-report_problem_black::before {
+    content: url("/static/icons/report_problem_black.svg");
+}
+
+.icon-search_black::before {
+    content: url("/static/icons/search_black.svg");
+}
+
+.icon-settings_black::before {
+    content: url("/static/icons/settings_black.svg");
+}
+
+.icon-settings_input_component_black::before {
+    content: url("/static/icons/settings_input_component_black.svg");
+}
+
+.icon-thumbs_up_down_black::before {
+    content: url("/static/icons/thumbs_up_down_black.svg");
+}
+
+.icon-thumb_down_off_alt_black::before {
+    content: url("/static/icons/thumb_down_off_alt_black.svg");
+}
+
+.icon-thumb_up_black::before {
+    content: url("/static/icons/thumb_up_black.svg");
+}
+
+.icon-translate_black::before {
+    content: url("/static/icons/translate_black.svg");
+}
+
+.icon-visibility_off_black::before {
+    content: url("/static/icons/visibility_off_black.svg");
+}
+

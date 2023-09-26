@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Démonstration</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icons.css') }}">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon/favicon-16x16.png') }}">
+    <!-- <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"> -->
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="container">
+            <div class="col-12 rounded-bottom" id="navBar">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Démonstration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tortoise</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Autre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Config</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row">
+                <!-- text area and language selection  -->
+                <div class="col-7 order-first d-grid ">
+                    <div class="row">
+                        <div class="col-11-2 d-flex flex-row-reverse gap-2">
+                            <img src="{{ url_for('static', filename='img/english.png') }}" id="flag0"
+                                class="rounded language-flag align-middle">
+
+                            <i class="icon-arrow_right_alt_black align-middle"></i>
+
+                            <img src="{{ url_for('static', filename='img/french.png') }}" id="flag0"
+                                class="rounded language-flag align-middle">
+
+                            <div class="form-check form-switch align-middle">
+                                <input class="form-check-input" type="checkbox" role="switch" id="tradSwitch">
+                                <label class="form-check-label" for="tradSwitch">Traduction</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="d-grid gap-2 col-12 position-relative">
+
+                            <div id="textAreaDiv" class="col 12 rounded position-relative mt-2">
+                                <div class="position-absolute end-0 mt-1">
+                                    <!-- </div>class="d-flex flex-row-reverse "> -->
+                                    <button class="bg-transparent border-0"> <i class="icon-lightbulb_black"
+                                            id="idea"></i>
+                                    </button>
+                                </div>
+
+                                <textarea id="textArea" type="text" class="form-control" placeholder="Your text"
+                                    rows="3"></textarea>
+
+                                <div class="d-flex flex-row-reverse">
+                                    <p id="charactersCount"></p>
+
+                                </div>
+                            </div>
+
+                            <div class="d-grid col-6 mx-auto md-3">
+                                <button class="btn" id="sendBtn" type="button">Générer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-5">
+                    <div class="d-flex align-items-center gap-5">
+                        <!-- voice image -->
+                        <!-- <div class="d-grid col-3">
+                            <img src="{{ url_for('static', filename='img/trump.jpg') }}" id="voiceIcon"
+                                class="rounded-circle">
+                        </div> -->
+                        <!-- Dropdown -->
+                        <div class="col-3">
+                            <div class="dropdown" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Pour choisir la voix à utiliser">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownVoice"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Donald
+                                </button>
+                                <ul id="dropdown_voice_ul" class="dropdown-menu" aria-labelledby="dropdownVoice">
+                                </ul>
+                            </div>
+                        </div>  
+
+                        <div class="col">
+                            <div class="dropdown" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                title="Pour choisir la voix à utiliser">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPreset"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ultra-fast
+                                </button>
+                                <ul id="dropdown_preset_ul" class="dropdown-menu" aria-labelledby="dropdownPreset">
+                                    <li>
+                                        <btn class="dropdown-item">Ultra-fast</btn>
+                                    </li>
+                                    <li>
+                                        <btn class="dropdown-item">Fast</btn>
+                                    </li>
+                                    <li>
+                                        <btn class="dropdown-item">Standard</btn>
+                                    </li>
+                                    <li>
+                                        <btn class="dropdown-item">High-quality</btn>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div id="genResults" class="rounded mt-2">
+                        <div class="m-2">
+                            
+
+                            <!-- <div class="d-flex align-items-center gap-2">
+                                <h7>Donald : </h7>
+                                <audio controls controlsList="nodownload noplaybackrate">
+                                    <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                    Your browser does not support the audio element.
+                                </audio>
+                              </div> -->
+
+
+                            <!-- <audio class="" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <audio class="" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <audio class="" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                            <audio class="" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="split"></div>
+
+        <div class="container">
+            <table class="table" id="benchmark">
+                <thead>
+                    <tr>
+                        <th scope="col">Voix/Preset</th>
+                        <th scope="col">Originale</th>
+                        <th scope="col">Ultra-fast</th>
+                        <th scope="col">Fast</th>
+                        <th scope="col">Standard</th>
+                        <th scope="col">High-quality</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Donald</th>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/segment_1.wav') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Joe</th>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/segment_1.wav') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Barack</th>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/segment_1.wav') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                        <td>
+                            <audio class="audio_demo" controls controlsList="nodownload noplaybackrate">
+                                <source src="{{ url_for('static', filename='audio/trump.mp3') }}" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/socket.io.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/socket.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+:root {
+    --color_1: #4E8CC8;
+    --color_2: #60AFDC;
+    --color_3: #D5DFEA;
+    --color_4: #608B8C;
+    --color_5: #9AA8AE;
+    --color_6: #F2F2F2;
+}
+
+/* audio::-webkit-media-controls-timeline {
+    display: none;
+}
+
+audio::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+audio {
+    width: 200px;
+    zoom: 90%;
+    margin-right: 20%;
+} */
+
+#navBar {
+    background-color: #D5DFEA;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: var(--color_2);
+}
+
+.dropdown {
+    width: auto;
+    margin-top: 5.5vh;
+    margin-right: 200px;
+}
+
+.dropdown-toggle {
+    background-color: var(--color_4);
+}
+
+#textArea {
+    height: 30vh;
+    background-color: lightgray;
+    vertical-align: top;
+    width: 95%;
+    resize: none;
+}
+
+#textArea.form-control {
+    border: 0px;
+}
+
+#textArea:focus {
+    outline: 0;
+    box-shadow: none;
+    border: 0cap;
+}
+
+#textArea::placeholder {
+    color: grey;
+    opacity: 1;
+}
+
+#textAreaDiv:focus {
+    outline: 0;
+    box-shadow: none;
+    border: 0cap;
+}
+
+#textAreaDiv {
+    background-color: lightgray;
+    vertical-align: top;
+}
+
+#idea {
+    filter: invert(100%);
+}
+
+#idea:hover {
+    filter: invert(0%);
+}
+
+#sendBtn {
+    background-color: #608B8C;
+    color: white;
+    font-weight: bold;
+}
+
+#voiceIcon {
+    min-width: 5vw;
+    width: 5vw;
+    max-width: 10vw;
+    margin-top: 6vh;
+
+    min-height: 5vw;
+    height: 5vw;
+    max-height: 10vw;
+
+    display: none;
+
+}
+
+.language-flag {
+    min-width: 3vw;
+    width: 2.5vw;
+    max-width: 6vw;
+    height: 2.5vw;
+}
+
+#charactersCount {
+    margin-right: 2%;
+}
+
+.split {
+    height: 1vh;
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: var(--color_1);
+    border-radius: 0.25rem;
+}
+
+#genResults {
+    width: 100%;
+    height: 61.5%;
+    background-color: var(--color_5);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.audio_demo::-webkit-media-controls-timeline {
+    display: none;
+}
+
+.audio_demo::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+.audio_demo::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+.audio_demo {
+    width: 200px;
+    zoom: 90%;
+    margin-right: 20%;
+}
